@@ -16,14 +16,17 @@
 #     tags: List[str]
 #
 #
-# async def fetch_quote(session: aiohttp.ClientSession, url: str) -> List[Quote]:
+# async def fetch_quote(
+# session: aiohttp.ClientSession, url: str
+# ) -> List[Quote]:
 #     async with session.get(url) as response:
 #         if response.status == 200:
 #             html_content = await response.text()
 #             soup = BeautifulSoup(html_content, "html.parser")
 #             quote_elements = soup.select(".quote")
 #             return [
-#                 parse_single_quote(quote_soup) for quote_soup in quote_elements
+#                 parse_single_quote(quote_soup)
+#                 for quote_soup in quote_elements
 #             ]
 #         return []
 #
@@ -74,7 +77,9 @@
 #         writer = csv.writer(file)
 #         writer.writerow(["Quote", "Author", "Tags"])
 #         for quote in quotes:
-#             writer.writerow([quote.text, quote.author, ", ".join(quote.tags)])
+#             writer.writerow(
+#             [quote.text, quote.author, ", ".join(quote.tags)]
+#             )
 #
 #
 # async def get_all_quotes() -> List[Quote]:
