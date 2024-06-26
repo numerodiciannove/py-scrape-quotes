@@ -18,7 +18,9 @@
 #     tags: List[str]
 #
 #
-# async def fetch_quote(session: aiohttp.ClientSession, url: str) -> List[Quote]:
+# async def fetch_quote(
+# session: aiohttp.ClientSession, url: str
+# ) -> List[Quote]:
 #     async with session.get(url) as response:
 #         if response.status == 200:
 #             html_content = await response.text()
