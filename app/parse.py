@@ -85,7 +85,7 @@ async def get_all_quotes():
 
 async def main(output_csv_path: str) -> None:
     quotes = await get_all_quotes()
-    await write_quotes_to_csv(quotes, output_csv_path)
+    await write_quotes_to_csv(quotes=quotes, csv_path=output_csv_path)
 
 
 if __name__ == "__main__":
